@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
 -- Dumping data for table `stock`
 --
 
-INSERT INTO `stock` (`id`, `image`, `name`, `qty`, `discription`, `price`, `color`, `hamantota`, `matara`, `galle`) VALUES
+INSERT INTO `stock` (`id`, `image`, `name`, `qty`, `discription`, `price`, `color`, `hambantota`, `matara`, `galle`) VALUES
 (1, 'Product_1198_1666623718.png', 'i phone 12', '10', 'ytdrutyk yftyfy tyf tyf ty fyif i', '1250000', 'Red', 'Available', NULL, NULL),
 (2, 'Product_1198_1666623718.png', 'iPhone 14 Pro Max', '10', 'jgysud fhdsfdsu uf dsgfg udsg uyf', '469,030', 'Red', NULL, 'Available', 'Available');
 
