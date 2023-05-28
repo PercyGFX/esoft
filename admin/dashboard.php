@@ -1,4 +1,13 @@
 <?php
+// Start the session
+session_start();
+if(isset($_SESSION["login"]) and $_SESSION["login"] == 'ok'){
+
+}else{
+    header("Location: login.php");
+}
+
+
 require_once '../connection.php';
 
 $sql = "SELECT * FROM stock";

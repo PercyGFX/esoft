@@ -1,3 +1,21 @@
+<?php
+require_once 'connection.php';
+
+$location = $_GET["location"];
+$id = $_GET["id"];
+$locat = strtolower($location);
+$sql = "SELECT * FROM stock where id='$id'";
+//    echo $sql;
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+// output data of each row
+//                id, image, name, qty, discription, price, color, hamantota, matara, galle
+$row = mysqli_fetch_assoc($result);
+//while ($row = mysqli_fetch_assoc($result)) {
+//
+}
+
+?>
 <html>
 
     <head>
@@ -26,14 +44,9 @@
                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="#">Home </a>
-                        </li>
+
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="about.php">About Us</a>
                         </li>
                       
                         
@@ -76,19 +89,20 @@
 
             <!-- single product section start-->
 
+
             <div class="row">
                 <div class="card">
                     <div class="card-body">
                         <div class="row gx-4 gx-lg-5 align-items-center">
-                            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..."></div>
+                            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="images/<?php echo $row["image"]; ?> " alt="..."></div>
                             <div class="col-md-6">
-                                <div class="small mb-1">Product Id: 123</div>
-                                <h1 class="display-5 fw-bolder">Iphone 14</h1>
+                                <div class="small mb-1">Product Id: <?php echo  $row["id"]; ?> </div>
+                                <h1 class="display-5 fw-bolder"><?php echo  $row["name"]; ?> </h1>
                                 <div class="fs-5 mb-5">
                                     
-                                    <span>LKR 300000</span>
+                                    <span>LKR <?php echo  $row["price"]; ?> </span>
                                 </div>
-                                <p class="lead">Iphone 14 description</p>
+                                <p class="lead"><?php echo  $row["discription"]; ?> </p>
                                 <div class="d-flex">
                                    
                                    
