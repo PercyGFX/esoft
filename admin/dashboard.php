@@ -1,3 +1,13 @@
+<?php
+require_once '../connection.php';
+
+$sql = "SELECT * FROM stock";
+//    echo $sql;
+$result = mysqli_query($conn, $sql);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,30 +44,26 @@
 
     <div class="container">
         <div class="row">
-            <div class="card m-5" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="..." id="image" name="image">
+
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+//                id, image, name, qty, discription, price, color, hamantota, matara, galle
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="col-md-12 col-lg-4" style="">
+                <img src="../images/'.$row["image"].'" class="card-img-top" alt="..." id="image" name="image">
                 <div class="card-body">
-                    <h5 class="card-title" id="title" name="title">title</h5>
-                    <p class="card-text" id="desctption" name="desctption">description</p>
-                    <a href="#" class="btn btn-primary">view //navigate product page</a>
+                    <h5 class="card-title" id="title" name="title">'.$row["name"].'</h5>
+                    <p class="card-text" id="desctption" name="desctption">'.$row["discription"].'</p>
+                    <p>Location : Galle - '.$row["galle"].' | Matara -  '.$row["matara"].'  | Hambantota -  '.$row["hamantota"].' </p>
+                    <a href="#" class="btn btn-primary">view</a>
                 </div>
-            </div>
-            <div class="card m-5" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="..." id="image" name="image">
-                <div class="card-body">
-                    <h5 class="card-title" id="title" name="title">title</h5>
-                    <p class="card-text" id="desctption" name="desctption">description</p>
-                    <a href="#" class="btn btn-primary">view //navigate product page</a>
-                </div>
-            </div>
-            <div class="card m-5" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="..." id="image" name="image">
-                <div class="card-body">
-                    <h5 class="card-title" id="title" name="title">title</h5>
-                    <p class="card-text" id="desctption" name="desctption">description</p>
-                    <a href="#" class="btn btn-primary">view //navigate product page</a>
-                </div>
-            </div>
+            </div>';
+                }
+            }
+            ?>
+
+
         </div>
 
     </div>
