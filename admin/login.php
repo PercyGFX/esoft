@@ -1,3 +1,29 @@
+<?php
+require_once '../connection.php';
+$err = '';
+if(isset($_POST["username"]) || isset($_POST["password"])){
+//    id, username, password, status, role
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $pass  = md5($password);
+    $sql = "SELECT * FROM user where username ='$username' and password='$pass'";
+//    echo $sql;
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            header("Location: dashboard.php");
+        }
+    } else {
+        $err = '<span class="alert alert-danger">Invalid Username or Password</span>';
+    }
+
+    mysqli_close($conn);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +42,7 @@
     <div class="container d-flex justify-content-center">
         <span class="border m-5 w-50">
 
-
+<form action="login.php" method="post">
             <div class="row p-5">
                 <div class="mb-3 row justify-content-center">
                     <img src="../images/login.jpg" class="justify-content-center col-2 w-50" alt="login">
@@ -25,7 +51,7 @@
                 <div class="mb-3 row justify-content-center">
                     <label for="email" class="col-2 col-form-label">username</label>
                     <div class="col-5">
-                        <input type="email" class="form-control" id="username" name="username">
+                        <input type="text" class="form-control" id="username" name="username">
                     </div>
                 </div>
                 <div class="mb-3 row justify-content-center">
@@ -33,6 +59,7 @@
                     <div class="col-5">
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
+                    <? echo $err ?>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-2"></div>
@@ -41,6 +68,7 @@
                     </div>
                 </div>
             </div>
+    </form>
         </span>
     </div>
 </body>
