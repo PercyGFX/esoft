@@ -13,9 +13,15 @@
 
 <body class="container">
 
-     <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center">
         <span class="border m-5 w-50">
+
+
             <div class="row p-5">
+                <div class="mb-3 row justify-content-center">
+                    <img src="../images/login.jpg" class="justify-content-center col-2 w-50" alt="login">
+                </div>
+
                 <div class="mb-3 row justify-content-center">
                     <label for="email" class="col-2 col-form-label">username</label>
                     <div class="col-5">
