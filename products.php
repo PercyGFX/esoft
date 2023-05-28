@@ -106,7 +106,7 @@ $result = mysqli_query($conn, $sql);
                     </div>
 
 
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a href="product.php?id='. $row["id"] . '" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>';
