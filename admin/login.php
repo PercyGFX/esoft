@@ -12,35 +12,31 @@
 </head>
 
 <body class="container">
-    <div class="d-flex justify-content-end">
 
-    </div>
-    <form action="POST">
-        <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-sm-10 offset-sm-2">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                    </label>
+     <div class="container d-flex justify-content-center">
+        <span class="border m-5 w-50">
+            <div class="row p-5">
+                <div class="mb-3 row justify-content-center">
+                    <label for="email" class="col-2 col-form-label">username</label>
+                    <div class="col-5">
+                        <input type="email" class="form-control" id="username" name="username">
+                    </div>
+                </div>
+                <div class="mb-3 row justify-content-center">
+                    <label for="inputPassword" class="col-2 col-form-label">Password</label>
+                    <div class="col-5">
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-2"></div>
+                    <div class="col-5">
+                        <button type="submit" class="btn btn-primary mb-3">Login</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
+        </span>
+    </div>
 </body>
 
 </html>
