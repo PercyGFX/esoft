@@ -37,9 +37,9 @@
         <div class="container d-flex justify-content-center">
             <span class="border m-5 w-50">
 
-                <form class="p-5">
+                <form class="p-5" method="post" action="store_product.php" enctype="multipart/form-data">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
+                        <input type="file" class="custom-file-input" id="customFile" name="name">
                     </div>
                     <div class="row">
                         <div class="form-group col-md-5">
@@ -67,19 +67,19 @@
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="matara" name="matara">
-                            <label class="form-check-label" for="gridCheck">
+                            <label class="form-check-label" for="matara">
                                 Matara
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="galle" name="galle">
-                            <label class="form-check-label" for="gridCheck">
+                            <label class="form-check-label" for="galle">
                                 Galle
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="hambanthota" name="hambanthota">
-                            <label class="form-check-label" for="gridCheck">
+                            <label class="form-check-label" for="hambanthota">
                                 Hambanthota
                             </label>
                         </div>
