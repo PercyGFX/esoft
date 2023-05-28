@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $sql);
                 <div class="card-body">
                     <h5 class="card-title" id="title" name="title">'.$row["name"].'</h5>
                     <p class="card-text" id="desctption" name="desctption">'.$row["discription"].'</p>
-                    <p>Location : Galle - '.$row["galle"].' | Matara -  '.$row["matara"].'  | Hambantota -  '.$row["hamantota"].' </p>
+                    <p>Location : Galle - '.$row["galle"].' | Matara -  '.$row["matara"].'  | Hambantota -  '.$row["hambantota"].' </p>
                     <a href="#" class="btn btn-primary">view</a>
                 </div>
             </div>';
