@@ -1,3 +1,13 @@
+<?php
+// Start the session
+session_start();
+if(isset($_SESSION["login"]) and $_SESSION["login"] == 'OK'){
+
+}else{
+    header("Location: login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,34 +49,35 @@
 
                 <form class="p-5" method="post" action="store_product.php" enctype="multipart/form-data">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" name="name">
+                            <label for="inputEmail4">Image URL</label>
+                        <input type="text" class="custom-file-input" id="customFile" name="file" required>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-5">
                             <label for="inputEmail4">Product Name</label>
-                            <input type="text" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputPassword4">Price</label>
-                            <input type="number" class="form-control" id="price" name="price">
+                            <input type="number" class="form-control" id="price" name="price" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Quantity</label>
-                        <input type="number" class="form-control" id="inputAddress">
+                        <input type="number" class="form-control" id="inputAddress" name="quantity" required>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Description</label>
-                        <input type="text" class="form-control" id="description" name="description">
+                        <input type="text" class="form-control" id="description" name="description" required>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Color</label>
-                        <input type="text" class="form-control" id="color" name="color">
+                        <input type="text" class="form-control" id="color" name="color" required>
                     </div>
 
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="matara" name="matara">
+                            <input class="form-check-input" type="checkbox" id="matara" name="matara" required>
                             <label class="form-check-label" for="matara">
                                 Matara
                             </label>

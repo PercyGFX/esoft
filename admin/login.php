@@ -1,4 +1,6 @@
 <?php
+// Start the session
+session_start();
 require_once '../connection.php';
 $err = '';
 if(isset($_POST["username"]) || isset($_POST["password"])){
@@ -14,6 +16,7 @@ if(isset($_POST["username"]) || isset($_POST["password"])){
     if (mysqli_num_rows($result) == 1) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
+            $_SESSION["login"] = "ok";
             header("Location: dashboard.php");
         }
     } else {
