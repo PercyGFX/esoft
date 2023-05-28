@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
   `matara` varchar(45) DEFAULT NULL,
   `galle` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `stock`
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` varchar(45) DEFAULT NULL,
   `role` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `user`
