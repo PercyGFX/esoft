@@ -48,21 +48,21 @@ $result = mysqli_query($conn, $sql);
             <?php
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
-//                id, image, name, qty, discription, price, color, hamantota, matara, galle
-                while($row = mysqli_fetch_assoc($result)) {
-                    echo '<div class="col-md-12 col-lg-4" style="">
-                <img src="../images/'.$row["image"].'" class="card-img-top" alt="..." id="image" name="image">
+                // id, image, name, qty, discription, price, color, hamantota, matara, galle
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo ' <div class="col-md-12 col-lg-4 border w-25 m-3 p-3" style="">
+                <img src="../images/' . $row["image"] . '" class="card-img-top" alt="..." id="image" name="image">
+                <hr>
                 <div class="card-body">
                     <h5 class="card-title" id="title" name="title">'.$row["name"].'</h5>
                     <p class="card-text" id="desctption" name="desctption">'.$row["discription"].'</p>
-                    <p>Location : Galle - '.$row["galle"].' | Matara -  '.$row["matara"].'  | Hambantota -  '.$row["hambantota"].' </p>
+                    <p>Location : Galle - '.$row["galle"].' | Matara -  '.$row["matara"].'  | Hambantota -  '.$row["hamantota"].' </p>
                     <a href="#" class="btn btn-primary">view</a>
                 </div>
             </div>';
                 }
             }
             ?>
-
 
         </div>
 
