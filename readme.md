@@ -1,2 +1,1 @@
-hello I am induwara
-test by keshat 1.0 
+This project was completed by 4 people within 2 hours for Codemasters Hackethon 1.0
